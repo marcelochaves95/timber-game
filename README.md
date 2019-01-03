@@ -1,2 +1,2 @@
-# timber-game
+# Timber
 Game developed in SFML.
