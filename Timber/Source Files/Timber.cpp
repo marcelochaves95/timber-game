@@ -10,10 +10,16 @@
 
 using namespace sf;
 
-int main() {
-    VideoMode vm(1280, 800);
+int main()
+{
+    Texture textureBackground;
+    Sprite spriteBackground;
     
-    RenderWindow window(vm, "Timber", Style::Fullscreen);
+    RenderWindow window(VideoMode(1024, 720), "Timber", Style::Fullscreen);
+    textureBackground.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Graphics/background.png");
+    spriteBackground.setTexture(textureBackground);
+    spriteBackground.setPosition(0, 0);
+    
     while (window.isOpen())
     {
         
@@ -23,7 +29,7 @@ int main() {
         }
         
         window.clear();
-        
+        window.draw(spriteBackground);
         window.display();
     }
     
