@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46FF45A021DDAA63005DB64B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46FF459F21DDAA63005DB64B /* main.cpp */; };
+		46FF45A021DDAA63005DB64B /* Timber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46FF459F21DDAA63005DB64B /* Timber.cpp */; };
 		46FF45AC21DDAAEA005DB64B /* libsfml-system.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF45A721DDAAEA005DB64B /* libsfml-system.2.4.2.dylib */; };
 		46FF45AD21DDAAEA005DB64B /* libsfml-window.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF45A821DDAAEA005DB64B /* libsfml-window.2.4.2.dylib */; };
 		46FF45AE21DDAAEA005DB64B /* libsfml-audio.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF45A921DDAAEA005DB64B /* libsfml-audio.2.4.2.dylib */; };
@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		46FF459C21DDAA63005DB64B /* Timber */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Timber; sourceTree = BUILT_PRODUCTS_DIR; };
-		46FF459F21DDAA63005DB64B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		46FF459F21DDAA63005DB64B /* Timber.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timber.cpp; sourceTree = "<group>"; };
 		46FF45A721DDAAEA005DB64B /* libsfml-system.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-system.2.4.2.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.2_1/lib/libsfml-system.2.4.2.dylib"; sourceTree = "<group>"; };
 		46FF45A821DDAAEA005DB64B /* libsfml-window.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-window.2.4.2.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.2_1/lib/libsfml-window.2.4.2.dylib"; sourceTree = "<group>"; };
 		46FF45A921DDAAEA005DB64B /* libsfml-audio.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-audio.2.4.2.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.2_1/lib/libsfml-audio.2.4.2.dylib"; sourceTree = "<group>"; };
@@ -53,6 +53,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4630988F21DDB30900DF8CC2 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				46FF459F21DDAA63005DB64B /* Timber.cpp */,
+			);
+			path = "Source Files";
+			sourceTree = "<group>";
+		};
+		4630989021DDB31200DF8CC2 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Header Files";
+			sourceTree = "<group>";
+		};
 		46FF459321DDAA63005DB64B = {
 			isa = PBXGroup;
 			children = (
@@ -73,7 +88,8 @@
 		46FF459E21DDAA63005DB64B /* Timber */ = {
 			isa = PBXGroup;
 			children = (
-				46FF459F21DDAA63005DB64B /* main.cpp */,
+				4630989021DDB31200DF8CC2 /* Header Files */,
+				4630988F21DDB30900DF8CC2 /* Source Files */,
 			);
 			path = Timber;
 			sourceTree = "<group>";
@@ -146,7 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46FF45A021DDAA63005DB64B /* main.cpp in Sources */,
+				46FF45A021DDAA63005DB64B /* Timber.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
