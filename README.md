@@ -1,2 +1,3 @@
 # Timber
-Game developed in SFML.
+
+Game being developed in SFML.
