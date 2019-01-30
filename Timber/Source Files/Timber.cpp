@@ -6,14 +6,25 @@
 //  Copyright © 2019 Marcelo Chaves. All rights reserved.
 //
 
+// Include important C++ libraries here
+#include <sstream>
 #include <SFML/Graphics.hpp>
 
+// Make code easier to type with "using namespace"
 using namespace sf;
 
 int main()
 {
+    // Create a video mode object
+    // VideoMode vm (1920, 1080);
+    
+    // Low res code
     VideoMode vm (1280, 720);
     
+    // Create and open a window for the game
+    // RenderWindow window(vm, "Timber", Style::Fullscreen);
+    
+    // Low res code
     RenderWindow window(vm, "Timber");
     View view(sf::FloatRect(0, 0, 1280, 720));
     window.setView(view);
@@ -80,8 +91,41 @@ int main()
     // Track whether the game is running
     bool paused = true;
     
+    // Draw some text
+    int score = 0;
+    sf::Text messageText;
+    sf::Text scoreText;
+    
+    // We need to choose a font
+    Font font;
+    font.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Fonts/KOMIKAP_.ttf");
+    
+    // Set the font to our message
+    messageText.setFont(font);
+    scoreText.setFont(font);
+    
+    // Assign the actual message
+    messageText.setString("Press Enter to start!");
+    scoreText.setString("Score = 0");
+    
+    // Make it really big
+    messageText.setCharacterSize(75);
+    scoreText.setCharacterSize(100);
+    
+    // Choose a color
+    messageText.setFillColor(Color::White);
+    scoreText.setFillColor(Color::White);
+    
+    // Position the text
+    FloatRect textReact = messageText.getLocalBounds();
+    messageText.setOrigin(textReact.left + textReact.width / 2.0f, textReact.top + textReact.height / 2.0f);
+    messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
+    scoreText.setPosition(20, 20);
+    
     while (window.isOpen())
     {
+        score++;
+        
         /*
          *************************************
          Handle the players input
@@ -211,6 +255,11 @@ int main()
                     cloud3Active = false;
                 }
             }
+            
+            // Update the score text
+            std::stringstream ss;
+            ss << "Score = " << score;
+            scoreText.setString(ss.str());
         }
         
         /*
@@ -233,8 +282,13 @@ int main()
         // Draw the tree
         window.draw(spriteTree);
         
-        // Draw the tree
+        // Draw the insect
         window.draw(spriteBee);
+        if (paused)
+        {
+            // Draw our message
+            window.draw(messageText);
+        }
         
         // Show everything we just drew
         window.display();
