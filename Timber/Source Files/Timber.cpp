@@ -12,12 +12,19 @@ using namespace sf;
 
 int main()
 {
-    Texture textureBackground;
-    Sprite spriteBackground;
+    VideoMode vm (1280, 720);
     
-    RenderWindow window(VideoMode(1024, 720), "Timber", Style::Fullscreen);
+    RenderWindow window(vm, "Timber");
+    View view(sf::FloatRect(0, 0, 1280, 720));
+    window.setView(view);
+    
+    Texture textureBackground;
+    
     textureBackground.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Graphics/background.png");
+    
+    Sprite spriteBackground;
     spriteBackground.setTexture(textureBackground);
+    
     spriteBackground.setPosition(0, 0);
     
     while (window.isOpen())
