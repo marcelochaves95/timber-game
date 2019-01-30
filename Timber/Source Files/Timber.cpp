@@ -74,13 +74,36 @@ int main()
     float cloud2Speed = 0.0f;
     float cloud3Speed = 0.0f;
     
+    // Variables to control time itself
+    Clock clock;
+    
     while (window.isOpen())
     {
+        /*
+         *************************************
+         Handle the players input
+         *************************************
+         */
         
         if (Keyboard::isKeyPressed(Keyboard::Escape))
         {
             window.close();
         }
+        
+        /*
+         *************************************
+         Update the scene
+         *************************************
+         */
+        
+        // Measure time
+        Time dt = clock.restart();
+        
+        /*
+         *************************************
+         Draw the scene
+         *************************************
+         */
         
         // Clear everything from the last frame
         window.clear();
