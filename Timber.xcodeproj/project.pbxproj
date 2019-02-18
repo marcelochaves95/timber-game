@@ -28,17 +28,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4630989C21DDB92F00DF8CC2 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		4630989D21DDB92F00DF8CC2 /* bee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bee.png; sourceTree = "<group>"; };
-		4630989E21DDB92F00DF8CC2 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
-		4630989F21DDB92F00DF8CC2 /* log.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log.png; sourceTree = "<group>"; };
-		463098A021DDB92F00DF8CC2 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
-		463098A121DDB92F00DF8CC2 /* axe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = axe.png; sourceTree = "<group>"; };
-		463098A221DDB92F00DF8CC2 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
-		463098A321DDB93000DF8CC2 /* tree2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree2.png; sourceTree = "<group>"; };
-		463098A421DDB93000DF8CC2 /* rip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rip.png; sourceTree = "<group>"; };
-		463098A521DDB93000DF8CC2 /* branch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = branch.png; sourceTree = "<group>"; };
-		467BFA5C220232D8008824C6 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		4630989C21DDB92F00DF8CC2 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = "/Users/marcelo/Projects/timber-game/Timber/Graphics/background.png"; sourceTree = "<absolute>"; };
+		4630989D21DDB92F00DF8CC2 /* bee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bee.png; path = "/Users/marcelo/Projects/timber-game/Timber/Graphics/bee.png"; sourceTree = "<absolute>"; };
+		4630989E21DDB92F00DF8CC2 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cloud.png; path = "/Users/marcelo/Projects/timber-game/Timber/Graphics/cloud.png"; sourceTree = "<absolute>"; };
+		4630989F21DDB92F00DF8CC2 /* log.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = log.png; path = "/Users/marcelo/Projects/timber-game/Timber/Graphics/log.png"; sourceTree = "<absolute>"; };
+		463098A021DDB92F00DF8CC2 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = "/Users/marcelo/Projects/timber-game/Timber/Graphics/player.png"; sourceTree = "<absolute>"; };
+		463098A121DDB92F00DF8CC2 /* axe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = axe.png; path = "/Users/marcelo/Projects/timber-game/Timber/Graphics/axe.png"; sourceTree = "<absolute>"; };
+		463098A221DDB92F00DF8CC2 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tree.png; path = "/Users/marcelo/Projects/timber-game/Timber/Graphics/tree.png"; sourceTree = "<absolute>"; };
+		463098A321DDB93000DF8CC2 /* tree2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tree2.png; path = "/Users/marcelo/Projects/timber-game/Timber/Graphics/tree2.png"; sourceTree = "<absolute>"; };
+		463098A421DDB93000DF8CC2 /* rip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rip.png; path = "/Users/marcelo/Projects/timber-game/Timber/Graphics/rip.png"; sourceTree = "<absolute>"; };
+		463098A521DDB93000DF8CC2 /* branch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = branch.png; path = "/Users/marcelo/Projects/timber-game/Timber/Graphics/branch.png"; sourceTree = "<absolute>"; };
+		467BFA5C220232D8008824C6 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "/Users/marcelo/Projects/timber-game/Timber/Fonts"; sourceTree = "<absolute>"; };
 		46FF459C21DDAA63005DB64B /* Timber */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Timber; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FF459F21DDAA63005DB64B /* Timber.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timber.cpp; sourceTree = "<group>"; };
 		46FF45A721DDAAEA005DB64B /* libsfml-system.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-system.2.4.2.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.2_1/lib/libsfml-system.2.4.2.dylib"; sourceTree = "<group>"; };
@@ -93,8 +93,9 @@
 				463098A221DDB92F00DF8CC2 /* tree.png */,
 				463098A321DDB93000DF8CC2 /* tree2.png */,
 			);
-			path = Graphics;
-			sourceTree = "<group>";
+			name = Graphics;
+			path = "/Users/marcelo/Projects/timber-game/Timber/Graphics";
+			sourceTree = "<absolute>";
 		};
 		46FF459321DDAA63005DB64B = {
 			isa = PBXGroup;

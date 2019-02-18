@@ -20,15 +20,15 @@ side branchPositions[NUM_BRANCHES];
 
 int main()
 {
-    VideoMode vm (1280, 720);
+    VideoMode vm (1920, 1080);
     
     RenderWindow window(vm, "Timber");
-    View view(sf::FloatRect(0, 0, 1280, 720));
+    View view(sf::FloatRect(0, 0, 1920, 1080));
     window.setView(view);
     
     Texture textureBackground;
     
-    textureBackground.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Graphics/background.png");
+    textureBackground.loadFromFile("/Graphics/background.png");
     
     Sprite spriteBackground;
     
@@ -37,13 +37,13 @@ int main()
     spriteBackground.setPosition(0, 0);
     
     Texture textureTree;
-    textureTree.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Graphics/tree.png");
+    textureTree.loadFromFile("/Graphics/tree.png");
     Sprite spriteTree;
     spriteTree.setTexture(textureTree);
     spriteTree.setPosition(810, 0);
     
     Texture textureBee;
-    textureBee.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Graphics/bee.png");
+    textureBee.loadFromFile("/Graphics/bee.png");
     Sprite spriteBee;
     spriteBee.setTexture(textureBee);
     spriteBee.setPosition(0, 800);
@@ -54,7 +54,7 @@ int main()
     
     Texture textureCloud;
 
-    textureCloud.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Graphics/cloud.png");
+    textureCloud.loadFromFile("/Graphics/cloud.png");
 
     Sprite spriteCloud1;
     Sprite spriteCloud2;
@@ -95,7 +95,7 @@ int main()
     sf::Text scoreText;
     
     Font font;
-    font.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Fonts/KOMIKAP_.ttf");
+    font.loadFromFile("/Fonts/KOMIKAP_.ttf");
     
     messageText.setFont(font);
     scoreText.setFont(font);
@@ -115,7 +115,7 @@ int main()
     scoreText.setPosition(20, 20);
     
     Texture textureBranch;
-    textureBranch.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Graphics/branch.png");
+    textureBranch.loadFromFile("/Graphics/branch.png");
     for (int i = 0; i < NUM_BRANCHES; i++)
     {
         branches[i].setTexture(textureBranch);
