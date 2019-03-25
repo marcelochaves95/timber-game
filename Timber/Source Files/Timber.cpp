@@ -41,7 +41,7 @@ int main()
     Texture textureBackground;
     
     // Load a graphic into the texture
-    textureBackground.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Graphics/background.png");
+    textureBackground.loadFromFile("Graphics/background.png");
     
     // Create a sprite
     Sprite spriteBackground;
@@ -54,14 +54,14 @@ int main()
     
     // Make a tree sprite
     Texture textureTree;
-    textureTree.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Graphics/tree.png");
+    textureTree.loadFromFile("Graphics/tree.png");
     Sprite spriteTree;
     spriteTree.setTexture(textureTree);
     spriteTree.setPosition(810, 0);
     
     // Prepare the bee
     Texture textureBee;
-    textureBee.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Graphics/bee.png");
+    textureBee.loadFromFile("Graphics/bee.png");
     Sprite spriteBee;
     spriteBee.setTexture(textureBee);
     spriteBee.setPosition(0, 800);
@@ -73,7 +73,7 @@ int main()
     // Make 3 cloud sprites from 1 texture
     Texture textureCloud;
     // Load 1 new texture
-    textureCloud.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Graphics/cloud.png");
+    textureCloud.loadFromFile("Graphics/cloud.png");
     // 3 New sprites with the same texture
     Sprite spriteCloud1;
     Sprite spriteCloud2;
@@ -119,7 +119,7 @@ int main()
     
     // We need to choose a font
     Font font;
-    font.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Fonts/KOMIKAP_.ttf");
+    font.loadFromFile("Fonts/KOMIKAP_.ttf");
     
     // Set the font to our message
     messageText.setFont(font);
@@ -145,7 +145,7 @@ int main()
     
     // Prepare 6 branches
     Texture textureBranch;
-    textureBranch.loadFromFile("/Users/marcelochaves95/Projects/timber-game/Timber/Graphics/branch.png");
+    textureBranch.loadFromFile("Graphics/branch.png");
     // Set the texture for each branch sprite
     for (int i = 0; i < NUM_BRANCHES; i++)
     {
@@ -155,6 +155,44 @@ int main()
         // We can then spin it round without changing it's position
         branches[i].setOrigin(220, 20);
     }
+    
+    // Prepare the player
+    Texture texturePlayer;
+    texturePlayer.loadFromFile("Graphics/player.png");
+    Sprite spritePlayer;
+    spritePlayer.setTexture(texturePlayer);
+    spritePlayer.setPosition(580, 720);
+    
+    // The player starts on the left
+    side playerSide = side::LEFT;
+    
+    // Prepare the gravestone
+    Texture textureRIP;
+    textureRIP.loadFromFile("Graphics/rip.png");
+    Sprite spriteRIP;
+    spriteRIP.setTexture(textureRIP);
+    spriteRIP.setPosition(600, 860);
+    
+    // Prepare the axe
+    Texture textureAxe;
+    textureAxe.loadFromFile("Graphics/axe.png");
+    Sprite spriteAxe;
+    spriteAxe.setTexture(textureAxe);
+    spriteAxe.setPosition(700, 830);
+    
+    // Line the axe up with the tree
+    const float AXE_POSITION_LEFT = 700;
+    const float AXE_POSITION_RIGHT = 1075;
+    
+    // Prepare the flying log
+    Texture textureLog;
+    textureLog.loadFromFile("Graphics/log.png");
+    Sprite spriteLog;
+    
+    // Some other useful log related variables
+    bool logActive = false;
+    float logSpeedX = 1000;
+    float logSpeedY = -1500;
     
     updateBranches(1);
     updateBranches(2);
@@ -373,6 +411,18 @@ int main()
         
         // Draw the tree
         window.draw(spriteTree);
+        
+        // Draw the player
+        window.draw(spritePlayer);
+        
+        // Draw the axe
+        window.draw(spriteAxe);
+        
+        // Draraw the flying log
+        window.draw(spriteLog);
+        
+        // Draw the gravestone
+        window.draw(spriteRIP);
         
         // Draw the insect
         window.draw(spriteBee);
