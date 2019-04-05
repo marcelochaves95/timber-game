@@ -1,5 +1,5 @@
 //
-//  main.cpp
+//  timber.cpp
 //  Timber
 //
 //  Created by Marcelo Chaves on 03/01/19.
@@ -41,7 +41,7 @@ int main()
     Texture textureBackground;
     
     // Load a graphic into the texture
-    textureBackground.loadFromFile("Graphics/background.png");
+    textureBackground.loadFromFile("graphics/background.png");
     
     // Create a sprite
     Sprite spriteBackground;
@@ -54,14 +54,14 @@ int main()
     
     // Make a tree sprite
     Texture textureTree;
-    textureTree.loadFromFile("Graphics/tree.png");
+    textureTree.loadFromFile("graphics/tree.png");
     Sprite spriteTree;
     spriteTree.setTexture(textureTree);
     spriteTree.setPosition(810, 0);
     
     // Prepare the bee
     Texture textureBee;
-    textureBee.loadFromFile("Graphics/bee.png");
+    textureBee.loadFromFile("graphics/bee.png");
     Sprite spriteBee;
     spriteBee.setTexture(textureBee);
     spriteBee.setPosition(0, 800);
@@ -73,7 +73,7 @@ int main()
     // Make 3 cloud sprites from 1 texture
     Texture textureCloud;
     // Load 1 new texture
-    textureCloud.loadFromFile("Graphics/cloud.png");
+    textureCloud.loadFromFile("graphics/cloud.png");
     // 3 New sprites with the same texture
     Sprite spriteCloud1;
     Sprite spriteCloud2;
@@ -119,7 +119,7 @@ int main()
     
     // We need to choose a font
     Font font;
-    font.loadFromFile("Fonts/KOMIKAP_.ttf");
+    font.loadFromFile("fonts/KOMIKAP_.ttf");
     
     // Set the font to our message
     messageText.setFont(font);
@@ -145,7 +145,7 @@ int main()
     
     // Prepare 6 branches
     Texture textureBranch;
-    textureBranch.loadFromFile("Graphics/branch.png");
+    textureBranch.loadFromFile("graphics/branch.png");
     // Set the texture for each branch sprite
     for (int i = 0; i < NUM_BRANCHES; i++)
     {
@@ -158,7 +158,7 @@ int main()
     
     // Prepare the player
     Texture texturePlayer;
-    texturePlayer.loadFromFile("Graphics/player.png");
+    texturePlayer.loadFromFile("graphics/player.png");
     Sprite spritePlayer;
     spritePlayer.setTexture(texturePlayer);
     spritePlayer.setPosition(580, 720);
@@ -168,14 +168,14 @@ int main()
     
     // Prepare the gravestone
     Texture textureRIP;
-    textureRIP.loadFromFile("Graphics/rip.png");
+    textureRIP.loadFromFile("graphics/rip.png");
     Sprite spriteRIP;
     spriteRIP.setTexture(textureRIP);
     spriteRIP.setPosition(600, 860);
     
     // Prepare the axe
     Texture textureAxe;
-    textureAxe.loadFromFile("Graphics/axe.png");
+    textureAxe.loadFromFile("graphics/axe.png");
     Sprite spriteAxe;
     spriteAxe.setTexture(textureAxe);
     spriteAxe.setPosition(700, 830);
@@ -186,13 +186,16 @@ int main()
     
     // Prepare the flying log
     Texture textureLog;
-    textureLog.loadFromFile("Graphics/log.png");
+    textureLog.loadFromFile("graphics/log.png");
     Sprite spriteLog;
     
     // Some other useful log related variables
     bool logActive = false;
     float logSpeedX = 1000;
     float logSpeedY = -1500;
+    
+    // Control the player input
+    bool acceptInput = false;
     
     updateBranches(1);
     updateBranches(2);
@@ -208,6 +211,19 @@ int main()
          *************************************
          */
         
+        Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == Event::KeyReleased && !paused)
+            {
+                // Listen for key presses again
+                acceptInput = true;
+                
+                // Hide the axe
+                spriteAxe.setPosition(2000, spriteAxe.getPosition().y);
+            }
+        }
+        
         if (Keyboard::isKeyPressed(Keyboard::Escape))
         {
             window.close();
@@ -221,6 +237,74 @@ int main()
             // Reset the time and the score
             score = 0;
             timeRemaining = 5;
+            
+            // Make all the branches disappear
+            for (int i = 0; i < NUM_BRANCHES; i++)
+            {
+                branchPositions[i] = side::NONE;
+            }
+            
+            // Make sure the gravestone is hidden
+            spriteRIP.setPosition(675, 2000);
+            
+            // Move the player into position
+            spritePlayer.setPosition(580, 720);
+            acceptInput = true;
+        }
+        
+        // Wrap the player controls to
+        // Make sure we are accepting input
+        if (acceptInput)
+        {
+            // More code here next...
+            // First handle pressing the right cursos key
+            if (Keyboard::isKeyPressed(Keyboard::Right))
+            {
+                // Make sure the player is on the right
+                playerSide = side::RIGHT;
+                score++;
+                
+                // Add to the amount of time remaining
+                timeRemaining += (2 / score) + .15;
+                
+                spriteAxe.setPosition(AXE_POSITION_RIGHT, spriteAxe.getPosition().y);
+                
+                spritePlayer.setPosition(1200, 720);
+                
+                // Update branches
+                updateBranches(score);
+                
+                // Set the log flying to the left
+                spriteLog.setPosition(810, 720);
+                logSpeedX = -5000;
+                logActive = true;
+                
+                acceptInput = false;
+            }
+            
+            if (Keyboard::isKeyPressed(Keyboard::Left))
+            {
+                // Make sure the player is on the right
+                playerSide = side::LEFT;
+                score++;
+                
+                // Add to the amount of time remaining
+                timeRemaining += (2 / score) + .15;
+                
+                spriteAxe.setPosition(AXE_POSITION_RIGHT, spriteAxe.getPosition().y);
+                
+                spritePlayer.setPosition(580, 720);
+                
+                // Update branches
+                updateBranches(score);
+                
+                // Set the log flying
+                spriteLog.setPosition(810, 720);
+                logSpeedX = 5000;
+                logActive = true;
+                
+                acceptInput = false;
+            }
         }
         
         /*
@@ -382,6 +466,20 @@ int main()
                 {
                     // Hide the branch
                     branches[i].setPosition(3000, height);
+                }
+            }
+            
+            // Handle a flying log
+            if (logActive)
+            {
+                spriteLog.setPosition(spriteLog.getPosition().x + (logSpeedX * dt.asSeconds()), spriteLog.getPosition().y + (logSpeedY * dt.asSeconds()));
+                
+                // Has the insect reached the right hand edge of the screen?
+                if (spriteLog.getPosition().x < -100 || spriteLog.getPosition().x > 2000)
+                {
+                    // Set it up ready to be a whole new cloud next frame
+                    logActive = false;
+                    spriteLog.setPosition(810, 720);
                 }
             }
         }
