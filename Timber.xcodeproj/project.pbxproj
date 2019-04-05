@@ -46,6 +46,9 @@
 		46FF45A921DDAAEA005DB64B /* libsfml-audio.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-audio.2.4.2.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.2_1/lib/libsfml-audio.2.4.2.dylib"; sourceTree = "<group>"; };
 		46FF45AA21DDAAEA005DB64B /* libsfml-network.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-network.2.4.2.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.2_1/lib/libsfml-network.2.4.2.dylib"; sourceTree = "<group>"; };
 		46FF45AB21DDAAEA005DB64B /* libsfml-graphics.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-graphics.2.4.2.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.2_1/lib/libsfml-graphics.2.4.2.dylib"; sourceTree = "<group>"; };
+		FC4B0030225788C300648015 /* chop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = chop.wav; sourceTree = "<group>"; };
+		FC4B0031225788C300648015 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
+		FC4B0032225788C300648015 /* out_of_time.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = out_of_time.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,7 @@
 		46FF459E21DDAA63005DB64B /* timber-game */ = {
 			isa = PBXGroup;
 			children = (
+				FC4B002F225788AF00648015 /* sounds */,
 				467BFA5C220232D8008824C6 /* fonts */,
 				4630989121DDB62C00DF8CC2 /* graphics */,
 				4630988F21DDB30900DF8CC2 /* src */,
@@ -126,6 +130,16 @@
 				46FF45A821DDAAEA005DB64B /* libsfml-window.2.4.2.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC4B002F225788AF00648015 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				FC4B0030225788C300648015 /* chop.wav */,
+				FC4B0031225788C300648015 /* death.wav */,
+				FC4B0032225788C300648015 /* out_of_time.wav */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
