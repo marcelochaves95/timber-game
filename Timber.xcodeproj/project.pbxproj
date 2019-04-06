@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		467BFA5F220232E6008824C6 /* Timber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46FF459F21DDAA63005DB64B /* Timber.cpp */; };
+		467BFA5F220232E6008824C6 /* timber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46FF459F21DDAA63005DB64B /* timber.cpp */; };
 		46FF45AC21DDAAEA005DB64B /* libsfml-system.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF45A721DDAAEA005DB64B /* libsfml-system.2.4.2.dylib */; };
 		46FF45AD21DDAAEA005DB64B /* libsfml-window.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF45A821DDAAEA005DB64B /* libsfml-window.2.4.2.dylib */; };
 		46FF45AE21DDAAEA005DB64B /* libsfml-audio.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FF45A921DDAAEA005DB64B /* libsfml-audio.2.4.2.dylib */; };
@@ -38,14 +38,17 @@
 		463098A321DDB93000DF8CC2 /* tree2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree2.png; sourceTree = "<group>"; };
 		463098A421DDB93000DF8CC2 /* rip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rip.png; sourceTree = "<group>"; };
 		463098A521DDB93000DF8CC2 /* branch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = branch.png; sourceTree = "<group>"; };
-		467BFA5C220232D8008824C6 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		467BFA5C220232D8008824C6 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		46FF459C21DDAA63005DB64B /* Timber */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Timber; sourceTree = BUILT_PRODUCTS_DIR; };
-		46FF459F21DDAA63005DB64B /* Timber.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timber.cpp; sourceTree = "<group>"; };
+		46FF459F21DDAA63005DB64B /* timber.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = timber.cpp; sourceTree = "<group>"; };
 		46FF45A721DDAAEA005DB64B /* libsfml-system.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-system.2.4.2.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.2_1/lib/libsfml-system.2.4.2.dylib"; sourceTree = "<group>"; };
 		46FF45A821DDAAEA005DB64B /* libsfml-window.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-window.2.4.2.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.2_1/lib/libsfml-window.2.4.2.dylib"; sourceTree = "<group>"; };
 		46FF45A921DDAAEA005DB64B /* libsfml-audio.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-audio.2.4.2.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.2_1/lib/libsfml-audio.2.4.2.dylib"; sourceTree = "<group>"; };
 		46FF45AA21DDAAEA005DB64B /* libsfml-network.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-network.2.4.2.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.2_1/lib/libsfml-network.2.4.2.dylib"; sourceTree = "<group>"; };
 		46FF45AB21DDAAEA005DB64B /* libsfml-graphics.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-graphics.2.4.2.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.2_1/lib/libsfml-graphics.2.4.2.dylib"; sourceTree = "<group>"; };
+		FC4B0030225788C300648015 /* chop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = chop.wav; sourceTree = "<group>"; };
+		FC4B0031225788C300648015 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
+		FC4B0032225788C300648015 /* out_of_time.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = out_of_time.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,22 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4630988F21DDB30900DF8CC2 /* Source Files */ = {
+		4630988F21DDB30900DF8CC2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				46FF459F21DDAA63005DB64B /* Timber.cpp */,
+				46FF459F21DDAA63005DB64B /* timber.cpp */,
 			);
-			path = "Source Files";
+			path = src;
 			sourceTree = "<group>";
 		};
-		4630989021DDB31200DF8CC2 /* Header Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Header Files";
-			sourceTree = "<group>";
-		};
-		4630989121DDB62C00DF8CC2 /* Graphics */ = {
+		4630989121DDB62C00DF8CC2 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
 				463098A121DDB92F00DF8CC2 /* axe.png */,
@@ -93,13 +89,13 @@
 				463098A221DDB92F00DF8CC2 /* tree.png */,
 				463098A321DDB93000DF8CC2 /* tree2.png */,
 			);
-			path = Graphics;
+			path = graphics;
 			sourceTree = "<group>";
 		};
 		46FF459321DDAA63005DB64B = {
 			isa = PBXGroup;
 			children = (
-				46FF459E21DDAA63005DB64B /* Timber */,
+				46FF459E21DDAA63005DB64B /* timber-game */,
 				46FF459D21DDAA63005DB64B /* Products */,
 				46FF45A621DDAAEA005DB64B /* Frameworks */,
 			);
@@ -113,15 +109,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		46FF459E21DDAA63005DB64B /* Timber */ = {
+		46FF459E21DDAA63005DB64B /* timber-game */ = {
 			isa = PBXGroup;
 			children = (
-				467BFA5C220232D8008824C6 /* Fonts */,
-				4630989121DDB62C00DF8CC2 /* Graphics */,
-				4630989021DDB31200DF8CC2 /* Header Files */,
-				4630988F21DDB30900DF8CC2 /* Source Files */,
+				FC4B002F225788AF00648015 /* sounds */,
+				467BFA5C220232D8008824C6 /* fonts */,
+				4630989121DDB62C00DF8CC2 /* graphics */,
+				4630988F21DDB30900DF8CC2 /* src */,
 			);
-			path = Timber;
+			path = "timber-game";
 			sourceTree = "<group>";
 		};
 		46FF45A621DDAAEA005DB64B /* Frameworks */ = {
@@ -134,6 +130,16 @@
 				46FF45A821DDAAEA005DB64B /* libsfml-window.2.4.2.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC4B002F225788AF00648015 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				FC4B0030225788C300648015 /* chop.wav */,
+				FC4B0031225788C300648015 /* death.wav */,
+				FC4B0032225788C300648015 /* out_of_time.wav */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				467BFA5F220232E6008824C6 /* Timber.cpp in Sources */,
+				467BFA5F220232E6008824C6 /* timber.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
