@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Rider stuff
+.idea
+_ReSharper.Caches*
